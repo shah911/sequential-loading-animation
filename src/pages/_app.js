@@ -1,4 +1,4 @@
-import Loader from "@/components/loader";
+import Loader from "@/components/Loader";
 import "@/styles/globals.css";
 import { AnimatePresence } from "framer-motion";
 import { Orbitron } from "next/font/google";
