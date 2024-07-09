@@ -3,24 +3,6 @@ import { useEffect, useState } from "react";
 
 const main = {
   initial: {
-    clipPath: "inset(0)",
-  },
-  animate: {
-    clipPath: "inset(0)",
-  },
-  exit: {
-    clipPath: "inset(0 0 100% 0)",
-    transition: {
-      type: "tween",
-      delay: 0.45,
-      duration: 0.75,
-      ease: [0.45, 0, 0.55, 1],
-    },
-  },
-};
-
-const main2 = {
-  initial: {
     clipPath: "inset(100% 0 0 0)",
   },
   animate: {
@@ -32,6 +14,38 @@ const main2 = {
   },
   exit: {
     clipPath: "inset(0)",
+  },
+};
+
+const container = {
+  initial: {
+    clipPath: "inset(0)",
+  },
+  animate: {
+    clipPath: "inset(0)",
+  },
+  exit: {
+    clipPath: "inset(0 0 100% 0)",
+    transition: {
+      type: "tween",
+      ease: [0.45, 0, 0.55, 1],
+    },
+  },
+};
+
+const container2 = {
+  initial: {
+    clipPath: "inset(0)",
+  },
+  animate: {
+    clipPath: "inset(0)",
+  },
+  exit: {
+    clipPath: "inset(100% 0 0 0)",
+    transition: {
+      type: "tween",
+      ease: [0.45, 0, 0.55, 1],
+    },
   },
 };
 
@@ -49,29 +63,48 @@ function Loader() {
 
     return () => clearTimeout(timer);
   }, [count]);
-
   return (
-    <motion.div
-      variants={main}
-      initial="initial"
-      animate="animate"
-      exit="exit"
-      className="h-screen w-full flex items-center justify-center fixed z-40 bg-purple-500"
-    >
+    <div className="h-screen w-full flex items-center justify-center fixed z-40">
       <motion.div
-        variants={main2}
+        variants={container}
         initial="initial"
         animate="animate"
         exit="exit"
-        className="h-full w-full bg-purple-600"
-      ></motion.div>
-      <motion.span
-        exit={{ opacity: 0 }}
-        className="absolute bottom-[10%] lg:bottom-0 right-[5%] uppercase text-white text-[10vw] leading-[85%] tracking-tight"
+        className="relative h-full flex-[1] bg-purple-500"
       >
-        {count}%
-      </motion.span>
-    </motion.div>
+        <motion.div
+          variants={main}
+          className="relative h-full w-full bg-purple-600"
+        ></motion.div>
+        <span className="absolute bottom-[10%] lg:bottom-0 right-[5%] text-white text-[10vw] tracking-tight">
+          {count}%
+        </span>
+      </motion.div>
+      <motion.div
+        variants={container2}
+        initial="initial"
+        animate="animate"
+        exit="exit"
+        className="h-full flex-[1] bg-purple-500"
+      >
+        <motion.div
+          variants={main}
+          className="h-full w-full bg-purple-600"
+        ></motion.div>
+      </motion.div>
+      <motion.div
+        variants={container}
+        initial="initial"
+        animate="animate"
+        exit="exit"
+        className="h-full flex-[1] bg-purple-500"
+      >
+        <motion.div
+          variants={main}
+          className="h-full w-full bg-purple-600"
+        ></motion.div>
+      </motion.div>
+    </div>
   );
 }
 

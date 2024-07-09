@@ -10,16 +10,16 @@ const orbitron = Orbitron({
 });
 
 export default function App({ Component, pageProps }) {
-  // const [isLoading, setIsLoading] = useState(true);
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     setIsLoading(false);
-  //     window.scrollTo(0, 0);
-  //   }, 3000);
-  // }, []);
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+      window.scrollTo(0, 0);
+    }, 3000);
+  }, []);
   return (
     <div className={orbitron.className}>
-      {/* <AnimatePresence mode="wait">{isLoading && <Loader />}</AnimatePresence> */}
+      <AnimatePresence mode="wait">{isLoading && <Loader />}</AnimatePresence>
       <Component {...pageProps} />
     </div>
   );
