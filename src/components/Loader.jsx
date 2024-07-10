@@ -12,9 +12,9 @@ const main = {
       duration: 3,
     },
   },
-  exit: {
-    clipPath: "inset(0)",
-  },
+  // exit: {
+  //   clipPath: "inset(0)",
+  // },
 };
 
 const container = {
