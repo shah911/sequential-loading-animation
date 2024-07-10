@@ -27,6 +27,7 @@ const container = {
   exit: {
     clipPath: "inset(0 0 100% 0)",
     transition: {
+      duration: 0.5,
       type: "tween",
       ease: [0.45, 0, 0.55, 1],
     },
@@ -43,6 +44,7 @@ const container2 = {
   exit: {
     clipPath: "inset(100% 0 0 0)",
     transition: {
+      duration: 0.5,
       type: "tween",
       ease: [0.45, 0, 0.55, 1],
     },
