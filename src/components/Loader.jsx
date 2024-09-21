@@ -72,7 +72,7 @@ function Loader() {
         initial="initial"
         animate="animate"
         exit="exit"
-        className="relative h-full flex-[1] bg-purple-500"
+        className="relative h-full flex-[1] bg-purple-500 -mx-1"
       >
         <motion.div
           variants={main}
@@ -87,7 +87,7 @@ function Loader() {
         initial="initial"
         animate="animate"
         exit="exit"
-        className="h-full flex-[1] bg-purple-500"
+        className="h-full flex-[1] bg-purple-500 -mx-1"
       >
         <motion.div
           variants={main}
@@ -99,7 +99,7 @@ function Loader() {
         initial="initial"
         animate="animate"
         exit="exit"
-        className="h-full flex-[1] bg-purple-500"
+        className="h-full flex-[1] bg-purple-500 -mx-1"
       >
         <motion.div
           variants={main}
